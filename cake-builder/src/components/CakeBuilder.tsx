@@ -6,15 +6,15 @@ import { Layer } from "../model/Layer";
 
 interface CakeBuilderProps {
   layer: Layer;
+  remove(): void;
+  updateLayers(layer: Layer): void;
 }
 
-function CakeBuilder({ layer }: CakeBuilderProps) {
+function CakeBuilder({ layer, remove, updateLayers }: CakeBuilderProps) {
   return (
     <div>
-      <LayerAdd></LayerAdd>
-      {layer.map((layer: Layer, index: any) => (
-        <LayerBuilder layer={layer}></LayerBuilder>
-      ))}
+      <LayerAdd updateLayer={updateLayers}></LayerAdd>
+      <LayerBuilder layer={layer} remove={remove}></LayerBuilder>
     </div>
   );
 }

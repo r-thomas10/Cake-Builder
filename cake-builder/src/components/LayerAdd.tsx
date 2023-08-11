@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./../styles/CakeBuilder.css";
 import LayerForm from "./LayerForm";
+import { Layer } from "../model/Layer";
 
-function LayerAdd() {
+interface LayerAddProps {
+  updateLayer(layer: Layer): void;
+}
+
+function LayerAdd({ updateLayer }: LayerAddProps) {
   const [isVisible, setIsVisible] = useState(false);
   function handleClick() {
     setIsVisible(true);
@@ -14,7 +19,7 @@ function LayerAdd() {
   return (
     <div>
       <button onClick={handleClick}>Layer Add</button>
-      {isVisible ? <LayerForm /> : <div></div>}
+      {isVisible ? <LayerForm updateLayer={updateLayer} /> : <div></div>}
       <button onClick={cancelClick}>Cancel</button>
     </div>
   );
