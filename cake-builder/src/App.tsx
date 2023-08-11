@@ -20,7 +20,7 @@ function App() {
     {
       height: 6,
       width: 10,
-      color: "white",
+      color: "pink",
     },
   ]);
 
@@ -43,19 +43,25 @@ function App() {
   }
 
   return (
-    <div>
-      {layers.map((layer, index) => (
-        <Cake layer={layer}></Cake>
-      ))}
-      {layers.map((layer, index) => (
-        <CakeBuilder
-          layer={layer}
-          updateLayers={updateLayers}
-          remove={() => {
-            removeLayerByIndex(index);
-          }}
-        ></CakeBuilder>
-      ))}
+    <div className="App">
+      <div className="layers">
+        <h2>Cake Builder</h2>
+        {layers.map((layer, index) => (
+          <CakeBuilder
+            layer={layer}
+            updateLayers={updateLayers}
+            remove={() => {
+              removeLayerByIndex(index);
+            }}
+          ></CakeBuilder>
+        ))}
+      </div>
+      <div className="cake">
+        <h2>Cake Preview</h2>
+        {layers.map((layer, index) => (
+          <Cake layer={layer}></Cake>
+        ))}
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ interface LayerFormProps {
 function LayerForm({ updateLayer }: LayerFormProps) {
   const [height, setHeight] = useState(5);
   const [width, setWidth] = useState(8);
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("white");
 
   function addLayer(event: FormEvent) {
     event.preventDefault();
@@ -27,7 +27,7 @@ function LayerForm({ updateLayer }: LayerFormProps) {
   }
   return (
     <form onSubmit={addLayer}>
-      <label htmlFor="height">Height</label>
+      <label htmlFor="height">Height {height}</label>
       <input
         type="range"
         id="height"
@@ -36,7 +36,7 @@ function LayerForm({ updateLayer }: LayerFormProps) {
         value={height}
         onChange={(e) => setHeight(parseInt(e.target.value))}
       ></input>
-      <label htmlFor="width">Width</label>
+      <label htmlFor="width">Width {width}</label>
       <input
         type="range"
         id="width"

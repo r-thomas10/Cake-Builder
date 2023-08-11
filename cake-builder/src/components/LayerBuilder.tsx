@@ -8,12 +8,32 @@ interface LayerBuilderProps {
 }
 
 function LayerBuilder({ layer, remove }: LayerBuilderProps) {
+  // let flavor = () => {
+  //   if (layer.color === "white") {
+  //     flavor = "strawberry";
+  //   } else if (layer.color === "brown") {
+  //     flavor = "chocolate";
+  //   } else if (layer.color === "pink") {
+  //     flavor = "strawberry";
+  //   }
+  // };
+
   return (
-    <div>
-      <h3 className="info">Height: {layer.height}</h3>
-      <h3 className="info">Width: {layer.width}</h3>
-      <h3 className="info">Color:{layer.color}</h3>
-      <button onClick={remove}>Delete</button>
+    <div className="LayerBuilder">
+      <div className="Flavor">
+        <h3 className="info">Flavor:</h3>
+        <div
+          className="flavorBox"
+          style={{ backgroundColor: layer.color }}
+        ></div>
+      </div>
+      <div className="info">
+        <h3>Height: {layer.height}</h3>
+        <h3>Width: {layer.width}</h3>
+      </div>
+      <div className="buttonBox">
+        <button onClick={remove}>Delete</button>
+      </div>
     </div>
   );
 }

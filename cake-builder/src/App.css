@@ -1,3 +1,24 @@
+* {
+  font-family: "Indie Flower", cursive;
+}
+
 body {
-  background-color: black;
+  background-color: teal;
+}
+
+.App {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 50px;
+}
+.cake {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 80%;
+}
+
+.layers {
+  width: 80%;
+  margin: 0px auto;
 }
