@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Cake from "./components/Cake";
 import CakeBuilder from "./components/CakeBuilder";
+import Header from "./components/Header";
 import LayerAdd from "./components/LayerAdd";
 import { Layer } from "./model/Layer";
 
@@ -10,17 +11,17 @@ function App() {
     {
       height: 2,
       width: 4,
-      color: "white",
+      color: "#FAE8E0",
     },
     {
       height: 4,
       width: 8,
-      color: "white",
+      color: "#FAE8E0",
     },
     {
       height: 6,
       width: 10,
-      color: "pink",
+      color: "#EF7C8E",
     },
   ]);
 
@@ -44,23 +45,25 @@ function App() {
 
   return (
     <div className="App">
-      <div className="layers">
-        <h2>Cake Builder</h2>
-        {layers.map((layer, index) => (
-          <CakeBuilder
-            layer={layer}
-            updateLayers={updateLayers}
-            remove={() => {
-              removeLayerByIndex(index);
-            }}
-          ></CakeBuilder>
-        ))}
-      </div>
-      <div className="cake">
-        <h2>Cake Preview</h2>
-        {layers.map((layer, index) => (
-          <Cake layer={layer}></Cake>
-        ))}
+      <Header></Header>
+      <div className="body">
+        <div className="CakeBuilder">
+          {layers.map((layer, index) => (
+            <CakeBuilder
+              layer={layer}
+              updateLayers={updateLayers}
+              remove={() => {
+                removeLayerByIndex(index);
+              }}
+            ></CakeBuilder>
+          ))}
+        </div>
+        <div className="cake">
+          <h2>Cake Preview</h2>
+          {layers.map((layer, index) => (
+            <Cake layer={layer}></Cake>
+          ))}
+        </div>
       </div>
     </div>
   );

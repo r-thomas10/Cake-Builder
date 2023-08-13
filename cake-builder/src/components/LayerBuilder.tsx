@@ -22,17 +22,14 @@ function LayerBuilder({ layer, remove }: LayerBuilderProps) {
     <div className="LayerBuilder">
       <div className="Flavor">
         <h3 className="info">Flavor:</h3>
-        <div
-          className="flavorBox"
-          style={{ backgroundColor: layer.color }}
-        ></div>
+        <h3 className="flavorBox" style={{ backgroundColor: layer.color }}></h3>
+        <div className="buttonBox">
+          <button onClick={remove}>Delete</button>
+        </div>{" "}
       </div>
       <div className="info">
         <h3>Height: {layer.height}</h3>
         <h3>Width: {layer.width}</h3>
-      </div>
-      <div className="buttonBox">
-        <button onClick={remove}>Delete</button>
       </div>
     </div>
   );

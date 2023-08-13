@@ -3,9 +3,10 @@ import { Layer } from "../model/Layer";
 
 interface LayerFormProps {
   updateLayer(layer: Layer): void;
+  cancelClick(): void;
 }
 
-function LayerForm({ updateLayer }: LayerFormProps) {
+function LayerForm({ updateLayer, cancelClick }: LayerFormProps) {
   const [height, setHeight] = useState(5);
   const [width, setWidth] = useState(8);
   const [color, setColor] = useState("white");
@@ -52,11 +53,12 @@ function LayerForm({ updateLayer }: LayerFormProps) {
         value={color}
         onChange={(e) => setColor(e.target.value)}
       >
-        <option value="pink">Strawberry</option>
-        <option value="brown">Chocolate</option>
-        <option value="white">Vanilla</option>
+        <option value="#EF7C8E">Strawberry</option>
+        <option value="#3F000F">Chocolate</option>
+        <option value="#FAE8E0">Vanilla</option>
       </select>
       <button type="submit">Save</button>
+      <button onClick={cancelClick}>Cancel</button>
       {/* layeradd just hides the form when clicked */}
     </form>
   );
