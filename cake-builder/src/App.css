@@ -1,3 +1,39 @@
+* {
+  font-family: "Indie Flower", cursive;
+  /* background-color: #1aafb9; */
+}
 body {
-  background-color: black;
+  background-color: #b6e2d3;
+}
+
+h2 {
+  margin: 0px auto;
+  padding: 20px;
+}
+
+.App {
+  margin-top: 50px;
+}
+.body {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.cake {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 80%;
+}
+
+.CakeBuilder {
+  margin: 0px auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .body {
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+  }
 }

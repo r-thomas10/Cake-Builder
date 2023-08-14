@@ -1,3 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 h3 {
   color: white;
+}
+
+.LayerBuilder {
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  font-family: "Indie Flower", cursive;
+  margin: 0 auto;
+  font-size: 18px;
+  background-color: #d8a7b1;
+  width: 80%;
+}
+
+.Flavor {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  justify-content: space-around;
+}
+
+.flavorBox {
+  height: 20px;
+  width: 30px;
+  margin-left: 10px;
+  margin-top: 25px;
+  border: 1px black solid;
+}
+
+.info {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info p {
+  width: 200px;
+  height: 10px;
+  background-color: grey;
+}
+
+button {
+  margin-top: 15px;
+  margin-right: 20px;
+  padding-left: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .LayerBuilder {
+    width: 400px;
+  }
 }
