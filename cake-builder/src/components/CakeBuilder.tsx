@@ -13,7 +13,6 @@ interface CakeBuilderProps {
 function CakeBuilder({ layer, remove, updateLayers }: CakeBuilderProps) {
   return (
     <div className="CakeBuilder">
-      <LayerAdd updateLayer={updateLayers}></LayerAdd>
       <LayerBuilder layer={layer} remove={remove}></LayerBuilder>
     </div>
   );
