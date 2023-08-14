@@ -46,8 +46,10 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
+
       <div className="body">
         <div className="CakeBuilder">
+          <LayerAdd updateLayer={updateLayers}></LayerAdd>
           {layers.map((layer, index) => (
             <CakeBuilder
               layer={layer}
